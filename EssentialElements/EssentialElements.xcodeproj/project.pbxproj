@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		179F404C1D1DC766003C84B2 /* EssentialElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 179F404B1D1DC766003C84B2 /* EssentialElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		179F40541D1DC7B9003C84B2 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F40531D1DC7B9003C84B2 /* BorderedButton.swift */; };
+		17D1A6FB1D1DD84E00367C1C /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FA1D1DD84E00367C1C /* BorderedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		179F404B1D1DC766003C84B2 /* EssentialElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialElements.h; sourceTree = "<group>"; };
 		179F404D1D1DC766003C84B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179F40531D1DC7B9003C84B2 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderedButton.swift; path = Views/BorderedButton.swift; sourceTree = "<group>"; };
+		17D1A6FA1D1DD84E00367C1C /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderedView.swift; path = Views/BorderedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				179F40531D1DC7B9003C84B2 /* BorderedButton.swift */,
+				17D1A6FA1D1DD84E00367C1C /* BorderedView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				179F40541D1DC7B9003C84B2 /* BorderedButton.swift in Sources */,
+				17D1A6FB1D1DD84E00367C1C /* BorderedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +299,7 @@
 				179F40521D1DC766003C84B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
