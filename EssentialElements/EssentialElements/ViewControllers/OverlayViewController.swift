@@ -46,6 +46,28 @@ public class OverlaySegue: UIStoryboardSegue {
     }
 }
 
+//MARK: - UIViewController Extension
+
+public extension UIViewController {
+    
+    public var overlayViewController : OverlayViewController? {
+        get {
+            var viewController = self
+            while true {
+                if let viewController = viewController as? OverlayViewController {
+                    return viewController
+                }
+                if let next = viewController.parentViewController {
+                    viewController = next
+                } else {
+                    return nil
+                }
+            }
+        }
+    }
+}
+
+
 //MARK: - OverlayViewController Definition
 
 public class OverlayViewController: UIViewController, OverlaySegueSupporting {
@@ -90,14 +112,14 @@ public class OverlayViewController: UIViewController, OverlaySegueSupporting {
         overlay.didMoveToParentViewController(self)
         
         animator.animationDirection = .Forward
-        animator.transition(overlay.view, animated: true) { [weak self] (finished : Bool) in
-            if let oldOverlay = self?.overlayedViewController {
+        animator.transition(overlay.view, animated: true) { (finished : Bool) in
+            if let oldOverlay = self.overlayedViewController {
                 oldOverlay.willMoveToParentViewController(nil)
                 oldOverlay.removeFromParentViewController()
                 oldOverlay.didMoveToParentViewController(nil)
             }
             
-            self?.overlayedViewController = overlay
+            self.overlayedViewController = overlay
         }
     }
     
@@ -107,12 +129,12 @@ public class OverlayViewController: UIViewController, OverlaySegueSupporting {
             return
         }
         animator.animationDirection = .Reverse
-        animator.transition(nil, animated: animated) { [weak self] (finished : Bool) in
+        animator.transition(nil, animated: animated) { (finished : Bool) in
             overlayedViewController.willMoveToParentViewController(nil)
             overlayedViewController.removeFromParentViewController()
             overlayedViewController.didMoveToParentViewController(nil)
 
-            self?.overlayedViewController = nil
+            self.overlayedViewController = nil
         }
     }
     
