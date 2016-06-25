@@ -13,6 +13,8 @@
 		17D1A6FD1D1DEAD600367C1C /* FunctionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FC1D1DEAD600367C1C /* FunctionAnimation.swift */; };
 		17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */; };
 		17D1A7021D1DED7300367C1C /* CGFloatOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */; };
+		17D1A7051D1DF24600367C1C /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7041D1DF24600367C1C /* OverlayViewController.swift */; };
+		17D1A7091D1DF39900367C1C /* ContainerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7081D1DF39900367C1C /* ContainerAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		17D1A6FC1D1DEAD600367C1C /* FunctionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunctionAnimation.swift; path = Animations/FunctionAnimation.swift; sourceTree = "<group>"; };
 		17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleOperations.swift; path = Extensions/DoubleOperations.swift; sourceTree = "<group>"; };
 		17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatOperations.swift; path = Extensions/CGFloatOperations.swift; sourceTree = "<group>"; };
+		17D1A7041D1DF24600367C1C /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlayViewController.swift; path = ViewControllers/OverlayViewController.swift; sourceTree = "<group>"; };
+		17D1A7081D1DF39900367C1C /* ContainerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerAnimator.swift; path = ContainerAnimators/ContainerAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +60,13 @@
 		179F404A1D1DC766003C84B2 /* EssentialElements */ = {
 			isa = PBXGroup;
 			children = (
+				17D1A7071D1DF34E00367C1C /* ContainerAnimators */,
+				17D1A7061D1DF33600367C1C /* Animations */,
+				17D1A7031D1DF1F800367C1C /* ViewControllers */,
 				17D1A6FE1D1DEB7100367C1C /* Extensions */,
 				179F40551D1DCAED003C84B2 /* Views */,
 				179F404B1D1DC766003C84B2 /* EssentialElements.h */,
 				179F404D1D1DC766003C84B2 /* Info.plist */,
-				17D1A6FC1D1DEAD600367C1C /* FunctionAnimation.swift */,
 			);
 			path = EssentialElements;
 			sourceTree = "<group>";
@@ -81,6 +87,30 @@
 				17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		17D1A7031D1DF1F800367C1C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				17D1A7041D1DF24600367C1C /* OverlayViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		17D1A7061D1DF33600367C1C /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				17D1A6FC1D1DEAD600367C1C /* FunctionAnimation.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		17D1A7071D1DF34E00367C1C /* ContainerAnimators */ = {
+			isa = PBXGroup;
+			children = (
+				17D1A7081D1DF39900367C1C /* ContainerAnimator.swift */,
+			);
+			name = ContainerAnimators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +194,10 @@
 				17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */,
 				179F40541D1DC7B9003C84B2 /* BorderedButton.swift in Sources */,
 				17D1A7021D1DED7300367C1C /* CGFloatOperations.swift in Sources */,
+				17D1A7051D1DF24600367C1C /* OverlayViewController.swift in Sources */,
 				17D1A6FD1D1DEAD600367C1C /* FunctionAnimation.swift in Sources */,
 				17D1A6FB1D1DD84E00367C1C /* BorderedView.swift in Sources */,
+				17D1A7091D1DF39900367C1C /* ContainerAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
