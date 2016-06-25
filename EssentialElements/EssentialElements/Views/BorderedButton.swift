@@ -81,7 +81,7 @@ public class BorderedButton: UIButton {
                                                 context: UnsafeMutablePointer<Void>) {
         // Accessing self.titleLabel triggers a recursion into this method, so we 
         // can't explicitly check triggeringLabel==titleLabel
-        guard let triggeringLabel = object as? UILabel where BorderedButton.TextColorKey == keyPath else {
+        guard let _ = object as? UILabel where BorderedButton.TextColorKey == keyPath else {
             super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
             return
         }
