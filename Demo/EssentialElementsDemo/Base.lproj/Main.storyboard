@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n8j-pS-R90">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Overlay Navigation Controller-->
+        <scene sceneID="Ula-eW-Usr">
+            <objects>
+                <navigationController id="n8j-pS-R90" customClass="OverlayNavigationController" customModule="EssentialElements" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iTO-T2-Q9n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sd3-ik-gx5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ph0-oz-748" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-480" y="660"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pt-Uv-ZcM">
+                                <rect key="frame" x="0.0" y="350" width="600" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="cyO-Yv-sZm"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="ZM2-Wo-q9N" kind="embed" id="wpa-cZ-QGZ"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2H-BX-XSH">
+                                <rect key="frame" x="0.0" y="64" width="600" height="286"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnB-PP-QjK" customClass="BorderedButton" customModule="EssentialElements">
+                                        <rect key="frame" x="240" y="118" width="120" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TTM-Cc-Bk6"/>
+                                            <constraint firstAttribute="width" constant="120" id="mAc-xm-SkC"/>
+                                        </constraints>
+                                        <state key="normal" title="Full Overlay">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="eCh-q6-99q" kind="custom" customClass="ShowOverlaySegue" customModule="EssentialElements" id="Ldl-Co-qIU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FnB-PP-QjK" firstAttribute="centerX" secondItem="D2H-BX-XSH" secondAttribute="centerX" id="Ro6-8g-8N6"/>
+                                    <constraint firstItem="FnB-PP-QjK" firstAttribute="centerY" secondItem="D2H-BX-XSH" secondAttribute="centerY" id="rsX-fM-dhx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2pt-Uv-ZcM" secondAttribute="trailing" id="101-wv-urS"/>
+                            <constraint firstAttribute="trailing" secondItem="D2H-BX-XSH" secondAttribute="trailing" id="5wz-ZS-jUT"/>
+                            <constraint firstItem="2pt-Uv-ZcM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7oT-W2-bd8"/>
+                            <constraint firstItem="2pt-Uv-ZcM" firstAttribute="top" secondItem="D2H-BX-XSH" secondAttribute="bottom" id="T1M-fc-Wlf"/>
+                            <constraint firstItem="D2H-BX-XSH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eAt-7Q-uZY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2pt-Uv-ZcM" secondAttribute="bottom" id="jZD-pL-0Pa"/>
+                            <constraint firstItem="D2H-BX-XSH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tru-ES-735"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PYy-1F-2X8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="660"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xgb-5t-2kw">
+            <objects>
+                <viewController id="eCh-q6-99q" customClass="ViewController" customModule="EssentialElementsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JBh-jG-qiq"/>
+                        <viewControllerLayoutGuide type="bottom" id="udD-lf-MKc"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="XZM-LW-XGO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmm-PX-KUf" customClass="BorderedView" customModule="EssentialElements">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pZn-yT-vJc">
+                                        <rect key="frame" x="50" y="52" width="100" height="96"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNB-gD-xhT" customClass="BorderedButton" customModule="EssentialElements">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="2uj-3g-jha"/>
+                                                    <constraint firstAttribute="width" constant="100" id="85B-eF-JQ4"/>
+                                                </constraints>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="VHy-OK-6No" kind="custom" customClass="ShowOverlaySegue" customModule="EssentialElements" id="Rsm-yn-ABG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mII-Xk-fwl" customClass="BorderedButton" customModule="EssentialElements">
+                                                <rect key="frame" x="0.0" y="52" width="100" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="BeN-rY-MzO"/>
+                                                    <constraint firstAttribute="height" constant="44" id="LT7-aT-KNn"/>
+                                                </constraints>
+                                                <state key="normal" title="Dismiss">
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="dismissOverlay:" destination="eCh-q6-99q" eventType="primaryActionTriggered" id="qck-jB-zav"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pZn-yT-vJc" firstAttribute="centerX" secondItem="xmm-PX-KUf" secondAttribute="centerX" id="PBN-5I-FDq"/>
+                                    <constraint firstAttribute="height" constant="200" id="j87-uY-nj1"/>
+                                    <constraint firstItem="pZn-yT-vJc" firstAttribute="centerY" secondItem="xmm-PX-KUf" secondAttribute="centerY" id="t2N-jJ-mKJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="vWc-4S-Qvh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xmm-PX-KUf" firstAttribute="centerX" secondItem="XZM-LW-XGO" secondAttribute="centerX" id="ONk-Ze-hcN"/>
+                            <constraint firstItem="xmm-PX-KUf" firstAttribute="centerY" secondItem="XZM-LW-XGO" secondAttribute="centerY" id="boN-Uq-HWU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSo-f1-ET3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="292"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Bbg-B5-qjT">
+            <objects>
+                <viewController id="VHy-OK-6No" customClass="ViewController" customModule="EssentialElementsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zTN-yG-43w"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Kh-Pd-kpx"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="slD-XG-lWs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIm-XC-R3I" customClass="BorderedView" customModule="EssentialElements">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wgj-u8-B72">
+                                        <rect key="frame" x="50" y="52" width="100" height="96"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHZ-Ct-Ds8" customClass="BorderedButton" customModule="EssentialElements">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="34F-B4-8Ka"/>
+                                                    <constraint firstAttribute="width" constant="100" id="ylh-9V-jRf"/>
+                                                </constraints>
+                                                <state key="normal" title="Previous">
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="eCh-q6-99q" kind="custom" customClass="ShowOverlaySegue" customModule="EssentialElements" id="4Ex-h1-2IC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFv-Kl-0kn" customClass="BorderedButton" customModule="EssentialElements">
+                                                <rect key="frame" x="0.0" y="52" width="100" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="iNz-5s-oXi"/>
+                                                    <constraint firstAttribute="width" constant="100" id="x6H-2o-fcy"/>
+                                                </constraints>
+                                                <state key="normal" title="Dismiss">
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="dismissOverlay:" destination="VHy-OK-6No" eventType="primaryActionTriggered" id="P4I-7e-GdR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wgj-u8-B72" firstAttribute="centerX" secondItem="pIm-XC-R3I" secondAttribute="centerX" id="2qe-p4-ued"/>
+                                    <constraint firstItem="wgj-u8-B72" firstAttribute="centerY" secondItem="pIm-XC-R3I" secondAttribute="centerY" id="ChH-k5-SRp"/>
+                                    <constraint firstAttribute="width" constant="200" id="MZz-NK-613"/>
+                                    <constraint firstAttribute="height" constant="200" id="kH3-AH-6FV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pIm-XC-R3I" firstAttribute="centerY" secondItem="slD-XG-lWs" secondAttribute="centerY" id="1R2-RF-YuW"/>
+                            <constraint firstItem="pIm-XC-R3I" firstAttribute="centerX" secondItem="slD-XG-lWs" secondAttribute="centerX" id="Uv5-3w-XIs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icv-cc-cfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="1025"/>
+        </scene>
+        <!--Overlay View Controller-->
+        <scene sceneID="rrx-Nn-FxB">
+            <objects>
+                <viewController id="ZM2-Wo-q9N" customClass="OverlayViewController" customModule="EssentialElements" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eg7-9L-A5B">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-mE-GPe" customClass="BorderedButton" customModule="EssentialElements">
+                                <rect key="frame" x="240" y="103" width="120" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="EgU-sT-mP1"/>
+                                    <constraint firstAttribute="height" constant="44" id="u6n-HE-dJH"/>
+                                </constraints>
+                                <state key="normal" title="Child Overlay">
+                                    <color key="titleColor" red="0.38823529410000002" green="0.71372549019999998" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="eCh-q6-99q" kind="custom" customClass="ShowOverlaySegue" customModule="EssentialElements" id="qxW-MO-e5n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cVW-mE-GPe" firstAttribute="centerY" secondItem="eg7-9L-A5B" secondAttribute="centerY" id="Utu-ga-Lwy"/>
+                            <constraint firstItem="cVW-mE-GPe" firstAttribute="centerX" secondItem="eg7-9L-A5B" secondAttribute="centerX" id="sq5-cJ-V2w"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pK-9C-1Ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="1270"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4Ex-h1-2IC"/>
+    </inferredMetricsTieBreakers>
+</document>
