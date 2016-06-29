@@ -10,7 +10,7 @@ import UIKit
 
 public class OverlayNavigationController: UINavigationController, ShowOverlaySegueSupporting {
 
-    public var animatorType: ContainerAnimator.Type = ContainerAnimator.self
+    public var animatorType: ContainerAnimator.Type = CrossFadeContainerAnimator.self
     private var _animator: ContainerAnimator?
     public var animator: ContainerAnimator {
         get {

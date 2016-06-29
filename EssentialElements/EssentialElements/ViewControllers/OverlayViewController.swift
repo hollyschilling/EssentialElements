@@ -31,7 +31,7 @@ import UIKit
 
 public class OverlayViewController: UIViewController, ShowOverlaySegueSupporting {
 
-    public var animatorType: ContainerAnimator.Type = ContainerAnimator.self
+    public var animatorType: ContainerAnimator.Type = CrossFadeContainerAnimator.self
     private var _animator: ContainerAnimator?
     public var animator: ContainerAnimator {
         get {
@@ -79,5 +79,4 @@ public class OverlayViewController: UIViewController, ShowOverlaySegueSupporting
             self.activeOverlay = overlay
         }
     }
-    
 }

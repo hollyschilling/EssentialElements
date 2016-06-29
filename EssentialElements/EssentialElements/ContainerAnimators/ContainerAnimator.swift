@@ -34,7 +34,7 @@ public class ContainerAnimator {
     }
     
     public private(set) var containerView : UIView
-    public private(set) weak var currentContentView : UIView?
+    public weak var currentContentView : UIView?
     
     public var animationDuration : NSTimeInterval = 0.3
     public var animationOptions : UIViewAnimationOptions = [.BeginFromCurrentState, .CurveEaseInOut]
