@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1747D48F1D22300300DFD14A /* OverlayNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D48E1D22300300DFD14A /* OverlayNavigationController.swift */; };
 		1747D4921D22325300DFD14A /* ShowOverlaySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D4911D22325300DFD14A /* ShowOverlaySegue.swift */; };
 		1747D4941D22446A00DFD14A /* ThreeStageContainerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D4931D22446A00DFD14A /* ThreeStageContainerAnimator.swift */; };
 		1747D4961D22469300DFD14A /* CrossFadeContainerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D4951D22469300DFD14A /* CrossFadeContainerAnimator.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1747D48E1D22300300DFD14A /* OverlayNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlayNavigationController.swift; path = ViewControllers/OverlayNavigationController.swift; sourceTree = "<group>"; };
 		1747D4911D22325300DFD14A /* ShowOverlaySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowOverlaySegue.swift; path = Segues/ShowOverlaySegue.swift; sourceTree = "<group>"; };
 		1747D4931D22446A00DFD14A /* ThreeStageContainerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeStageContainerAnimator.swift; path = ContainerAnimators/ThreeStageContainerAnimator.swift; sourceTree = "<group>"; };
 		1747D4951D22469300DFD14A /* CrossFadeContainerAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CrossFadeContainerAnimator.swift; path = ContainerAnimators/CrossFadeContainerAnimator.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				17D1A7041D1DF24600367C1C /* OverlayViewController.swift */,
-				1747D48E1D22300300DFD14A /* OverlayNavigationController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 				17D1A7051D1DF24600367C1C /* OverlayViewController.swift in Sources */,
 				17D1A6FD1D1DEAD600367C1C /* FunctionAnimation.swift in Sources */,
 				17D1A6FB1D1DD84E00367C1C /* BorderedView.swift in Sources */,
-				1747D48F1D22300300DFD14A /* OverlayNavigationController.swift in Sources */,
 				17D1A7091D1DF39900367C1C /* ContainerAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
