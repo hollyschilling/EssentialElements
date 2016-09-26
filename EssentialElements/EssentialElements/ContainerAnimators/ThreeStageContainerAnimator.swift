@@ -25,9 +25,9 @@
 
 import UIKit
 
-public class ThreeStageContainerAnimator : ContainerAnimator {
+open class ThreeStageContainerAnimator : ContainerAnimator {
     
-    public override func transition(newContentView: UIView?, animated: Bool, completion: ((Bool) -> Void)? = nil) {
+    open override func transition(_ newContentView: UIView?, animated: Bool, completion: ((Bool) -> Void)? = nil) {
      
         let enteringView = newContentView
         let leavingView = currentContentView
@@ -36,14 +36,14 @@ public class ThreeStageContainerAnimator : ContainerAnimator {
             execute(enteringView, leavingView: leavingView)
         }
         
-        func animationCompletion(finished : Bool) {
+        func animationCompletion(_ finished : Bool) {
             finalize(enteringView, leavingView: leavingView)
             currentContentView = enteringView
             completion?(finished)
         }
         
         prepare(enteringView, leavingView: leavingView)
-        UIView.animateWithDuration(animationDuration,
+        UIView.animate(withDuration: animationDuration,
                                    delay: 0,
                                    options: animationOptions,
                                    animations: animations,
@@ -51,15 +51,15 @@ public class ThreeStageContainerAnimator : ContainerAnimator {
         
     }
     
-    public func prepare(enteringView: UIView?, leavingView: UIView?) {
+    open func prepare(_ enteringView: UIView?, leavingView: UIView?) {
         
     }
     
-    public func execute(enteringView: UIView?, leavingView: UIView?) {
+    open func execute(_ enteringView: UIView?, leavingView: UIView?) {
         
     }
 
-    public func finalize(enteringView: UIView?, leavingView: UIView?) {
+    open func finalize(_ enteringView: UIView?, leavingView: UIView?) {
         
     }
     

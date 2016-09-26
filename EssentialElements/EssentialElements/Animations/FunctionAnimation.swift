@@ -25,16 +25,16 @@
 
 import UIKit
 
-public class FunctionAnimation<ValueType : AnyObject> : CAKeyframeAnimation {
+open class FunctionAnimation<ValueType : AnyObject> : CAKeyframeAnimation {
 
     // Function should expect values [0, 1]
-    public var simpleValueFunction : ((Double) -> (ValueType))? {
+    open var simpleValueFunction : ((Double) -> (ValueType))? {
         didSet {
             updateValues()
         }
     }
     
-    public override var duration: CFTimeInterval {
+    open override var duration: CFTimeInterval {
         get {
             return super.duration
         }
@@ -44,7 +44,7 @@ public class FunctionAnimation<ValueType : AnyObject> : CAKeyframeAnimation {
         }
     }
     
-    public var frameRate : Double = 20 {
+    open var frameRate : Double = 20 {
         didSet {
             updateValues()
         }
@@ -70,7 +70,7 @@ public class FunctionAnimation<ValueType : AnyObject> : CAKeyframeAnimation {
             computedValues.append(aValue)
         }
         
-        keyTimes = times
+        keyTimes = times as [NSNumber]?
         values = computedValues
     }
     
@@ -81,6 +81,10 @@ public class FunctionAnimation<ValueType : AnyObject> : CAKeyframeAnimation {
     public convenience init(keyPath path: String?) {
         self.init()
         keyPath = path
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     

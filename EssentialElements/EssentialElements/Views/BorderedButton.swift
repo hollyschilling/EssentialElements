@@ -26,28 +26,28 @@
 import UIKit
 
 @IBDesignable
-public class BorderedButton: UIButton {
+open class BorderedButton: UIButton {
     
-    private static let TextColorKey = "textColor"
+    fileprivate static let TextColorKey = "textColor"
 
     //MARK: - Inspectable Properties
     
     @IBInspectable
-    public var cornerRadius : CGFloat = 5 {
+    open var cornerRadius : CGFloat = 5 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
     
     @IBInspectable
-    public var borderWidth : CGFloat = 2 {
+    open var borderWidth : CGFloat = 2 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
     @IBInspectable
-    public var borderColor : UIColor? {
+    open var borderColor : UIColor? {
         didSet {
             applyStyle()
         }
@@ -73,7 +73,7 @@ public class BorderedButton: UIButton {
         #endif
     }
     
-    public override func prepareForInterfaceBuilder() {
+    open override func prepareForInterfaceBuilder() {
         applyStyle()
     }
     
@@ -85,21 +85,21 @@ public class BorderedButton: UIButton {
     
     //MARK: - Overrides
     
-    public override func setTitleColor(color: UIColor?, forState state: UIControlState) {
-        super.setTitleColor(color, forState: state)
+    open override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+        super.setTitleColor(color, for: state)
         applyStyle()
     }
     
     //MARK: - KVO
     
-    public override func observeValueForKeyPath(keyPath: String?,
-                                                ofObject object: AnyObject?,
-                                                change: [String : AnyObject]?,
-                                                context: UnsafeMutablePointer<Void>) {
+    open override func observeValue(forKeyPath keyPath: String?,
+                                                of object: Any?,
+                                                change: [NSKeyValueChangeKey : Any]?,
+                                                context: UnsafeMutableRawPointer?) {
         // Accessing self.titleLabel triggers a recursion into this method, so we 
         // can't explicitly check triggeringLabel==titleLabel
-        guard let _ = object as? UILabel where BorderedButton.TextColorKey == keyPath else {
-            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        guard let _ = object as? UILabel , BorderedButton.TextColorKey == keyPath else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
             return
         }
         
@@ -108,7 +108,7 @@ public class BorderedButton: UIButton {
     
     //MARK: - Private Helpers
     
-    private func addTitleColorChangeObserver() {
+    fileprivate func addTitleColorChangeObserver() {
         // titleLabel is nil for types other than System or Custom
         titleLabel?.addObserver(self,
                                 forKeyPath: BorderedButton.TextColorKey,
@@ -116,12 +116,12 @@ public class BorderedButton: UIButton {
                                 context: nil)
     }
     
-    private func applyStyle() {
+    fileprivate func applyStyle() {
         layer.cornerRadius = cornerRadius
         layer.borderWidth = borderWidth
 
         let color = borderColor ?? currentTitleColor
-        layer.borderColor = color.CGColor
+        layer.borderColor = color.cgColor
     }
     
     

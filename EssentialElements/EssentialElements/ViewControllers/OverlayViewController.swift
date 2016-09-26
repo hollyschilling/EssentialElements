@@ -25,11 +25,9 @@
 
 import UIKit
 
-
-
 //MARK: - OverlayViewController Definition
 
-public class OverlayViewController: UIViewController, ShowOverlaySegueSupporting {
+public class OverlayViewController: UIViewController {
 
     public var animatorType: ContainerAnimator.Type = CrossFadeContainerAnimator.self
     private var _animator: ContainerAnimator?
@@ -58,22 +56,37 @@ public class OverlayViewController: UIViewController, ShowOverlaySegueSupporting
     
     //MARK: - OverlaySegueSupporting Methods
 
-    @objc public func showOverlay(overlay: UIViewController, sender: AnyObject?) {
-        presentOverlay(overlay, animated: true, completion: nil)
+    @objc public func show(overlay: UIViewController, sender: AnyObject?) {
+        present(overlay: overlay, animated: true, completion: nil)
     }
 
-    public func presentOverlay(overlay: UIViewController, animated: Bool, completion: ((Bool)->Void)? = nil) {
-
-        overlay.willMoveToParentViewController(self)
-        addChildViewController(overlay)
-        overlay.didMoveToParentViewController(self)
+    public func dismissOverlay(animated: Bool) {
         
-        animator.animationDirection = .Forward
+        guard let activeOverlay = activeOverlay else {
+            return
+        }
+        animator.animationDirection = .reverse
+        animator.transition(nil, animated: animated) { (finished : Bool) in
+            activeOverlay.willMove(toParentViewController: nil)
+            activeOverlay.removeFromParentViewController()
+            activeOverlay.didMove(toParentViewController: nil)
+            
+            self.activeOverlay = nil
+        }
+    }
+
+    public func present(overlay: UIViewController, animated: Bool, completion: ((Bool)->Void)? = nil) {
+
+        overlay.willMove(toParentViewController: self)
+        addChildViewController(overlay)
+        overlay.didMove(toParentViewController: self)
+        
+        animator.animationDirection = .forward
         animator.transition(overlay.view, animated: true) { (finished : Bool) in
             if let oldOverlay = self.activeOverlay {
-                oldOverlay.willMoveToParentViewController(nil)
+                oldOverlay.willMove(toParentViewController: nil)
                 oldOverlay.removeFromParentViewController()
-                oldOverlay.didMoveToParentViewController(nil)
+                oldOverlay.didMove(toParentViewController: nil)
             }
             
             self.activeOverlay = overlay

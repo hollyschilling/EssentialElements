@@ -25,22 +25,22 @@
 
 import UIKit
 
-public class CrossFadeContainerAnimator : ContainerAnimator {
+open class CrossFadeContainerAnimator : ContainerAnimator {
     
     
-    public func fadeViewIn(targetView : UIView) -> Void -> Void {
+    open func fadeViewIn(_ targetView : UIView) -> (Void) -> Void {
         return {
             targetView.alpha = 1
         }
     }
     
-    public func fadeViewOut(targetView : UIView) -> Void -> Void {
+    open func fadeViewOut(_ targetView : UIView) -> (Void) -> Void {
         return {
             targetView.alpha = 0
         }
     }
     
-    func phasedAnimation(view: UIView?, animated: Bool, animation: UIView -> Void -> Void, nextPhase: Bool -> Void) -> Bool -> Void {
+    func phasedAnimation(_ view: UIView?, animated: Bool, animation: @escaping (UIView) -> (Void) -> Void, nextPhase: @escaping (Bool) -> Void) -> (Bool) -> Void {
         return { (finished) in
             guard let view = view else {
                 nextPhase(finished)
@@ -52,10 +52,10 @@ public class CrossFadeContainerAnimator : ContainerAnimator {
         }
     }
 
-    func optionallyAnimate(animated: Bool, animation: Void -> Void, completion : (Bool -> Void)?) {
+    func optionallyAnimate(_ animated: Bool, animation: @escaping (Void) -> Void, completion : ((Bool) -> Void)?) {
         
         if animated {
-            UIView.animateWithDuration(animationDuration,
+            UIView.animate(withDuration: animationDuration,
                                        delay: 0,
                                        options: animationOptions,
                                        animations: animation,
@@ -66,12 +66,12 @@ public class CrossFadeContainerAnimator : ContainerAnimator {
         }
     }
     
-    public override func transition(newContentView: UIView?, animated: Bool, completion: ((Bool) -> Void)? = nil) {
+    open override func transition(_ newContentView: UIView?, animated: Bool, completion: ((Bool) -> Void)? = nil) {
 
         let oldContentView = currentContentView
         currentContentView = newContentView
         
-        func allComplete(finished : Bool) {
+        func allComplete(_ finished : Bool) {
             oldContentView?.removeFromSuperview()
             completion?(finished)
         }
@@ -87,8 +87,8 @@ public class CrossFadeContainerAnimator : ContainerAnimator {
             containerView.addSubview(newContentView)
         }
         
-        if let newContentView = newContentView where !newContentView.opaque,
-            let oldContentView = oldContentView where !oldContentView.opaque  {
+        if let newContentView = newContentView , !newContentView.isOpaque,
+            let oldContentView = oldContentView , !oldContentView.isOpaque  {
             
             optionallyAnimate(animated,
                               animation: combinedAnimation,

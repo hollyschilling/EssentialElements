@@ -26,25 +26,25 @@
 import UIKit
 
 
-public class ContainerAnimator {
+open class ContainerAnimator {
     
     public enum AnimationDirection {
-        case Forward
-        case Reverse
+        case forward
+        case reverse
     }
     
-    public private(set) var containerView : UIView
-    public weak var currentContentView : UIView?
+    open fileprivate(set) var containerView : UIView
+    open weak var currentContentView : UIView?
     
-    public var animationDuration : NSTimeInterval = 0.3
-    public var animationOptions : UIViewAnimationOptions = [.BeginFromCurrentState, .CurveEaseInOut]
-    public var animationDirection : AnimationDirection = .Forward
+    open var animationDuration : TimeInterval = 0.3
+    open var animationOptions : UIViewAnimationOptions = .beginFromCurrentState
+    open var animationDirection : AnimationDirection = .forward
     
     public required init(containerView aView : UIView) {
         containerView = aView
     }
     
-    public func transition(newContentView: UIView?, animated: Bool, completion: ((Bool) -> Void)? = nil) {
+    open func transition(_ newContentView: UIView?, animated: Bool, completion: ((Bool) -> Void)? = nil) {
         
         if let oldContentView = currentContentView {
             oldContentView.removeFromSuperview()

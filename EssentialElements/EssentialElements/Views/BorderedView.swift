@@ -26,56 +26,56 @@
 import UIKit
 
 @IBDesignable
-public class BorderedView: UIView {
+open class BorderedView: UIView {
 
     //MARK: - Inspectable Properties
     
     @IBInspectable
-    public var cornerRadius : CGFloat = 5 {
+    open var cornerRadius : CGFloat = 5 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
     
     @IBInspectable
-    public var borderWidth : CGFloat = 2 {
+    open var borderWidth : CGFloat = 2 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
     @IBInspectable
-    public var borderColor : UIColor? {
+    open var borderColor : UIColor? {
         didSet {
-            layer.borderColor = borderColor?.CGColor
+            layer.borderColor = borderColor?.cgColor
         }
     }
     
     @IBInspectable
-    public var shadowOffset : CGSize = CGSize(width: 0, height: 3) {
+    open var shadowOffset : CGSize = CGSize(width: 0, height: 3) {
         didSet {
             layer.shadowOffset = shadowOffset
         }
     }
     
     @IBInspectable
-    public var shadowRadius : CGFloat = 3 {
+    open var shadowRadius : CGFloat = 3 {
         didSet {
             layer.shadowRadius = shadowRadius
         }
     }
     
     @IBInspectable
-    public var shadowOpacity : Float = 0.3 {
+    open var shadowOpacity : Float = 0.3 {
         didSet {
             layer.shadowOpacity = shadowOpacity
         }
     }
     
     @IBInspectable
-    public var shadowColor : UIColor? {
+    open var shadowColor : UIColor? {
         didSet {
-            layer.shadowColor = shadowColor?.CGColor
+            layer.shadowColor = shadowColor?.cgColor
         }
     }
     
@@ -91,20 +91,20 @@ public class BorderedView: UIView {
         applyStyle()
     }
     
-    public override func prepareForInterfaceBuilder() {
+    open override func prepareForInterfaceBuilder() {
         applyStyle()
     }
 
-    private func applyStyle() {
+    fileprivate func applyStyle() {
         layer.masksToBounds = false
         
         layer.cornerRadius = cornerRadius
         layer.borderWidth = borderWidth
-        layer.borderColor = borderColor?.CGColor
+        layer.borderColor = borderColor?.cgColor
         
         layer.shadowOffset = shadowOffset
         layer.shadowRadius = shadowRadius
         layer.shadowOpacity = shadowOpacity
-        layer.shadowColor = shadowColor?.CGColor
+        layer.shadowColor = shadowColor?.cgColor
     }
 }

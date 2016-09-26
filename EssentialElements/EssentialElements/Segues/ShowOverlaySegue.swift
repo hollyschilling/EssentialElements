@@ -29,60 +29,26 @@ import UIKit
 
 // Syntax sugar adapted from https://medium.com/swift-programming/swift-selector-syntax-sugar-81c8a8b10df3#.tlnwn8wwq
 private extension Selector {
-    static let showOverlay = #selector(OverlayViewController.showOverlay(_:sender:))
-}
-
-//MARK: - ShowOverlaySegueSupporting Protocol Definition
-
-public protocol ShowOverlaySegueSupporting : NSObjectProtocol {
-    var animator: ContainerAnimator { get }
-    var activeOverlay: UIViewController? { get set }
-    
-    func showOverlay(overlay: UIViewController, sender: AnyObject?)
-    func presentOverlay(overlay: UIViewController, animated: Bool, completion: ((Bool)->Void)?)
-    func dismissOverlay(animated animated: Bool)
-}
-
-extension ShowOverlaySegueSupporting {
-    
-    public func showOverlay(overlay: UIViewController, sender: AnyObject?) {
-        presentOverlay(overlay, animated: true, completion: nil)
-    }
-    
-    public func dismissOverlay(animated animated: Bool) {
-        
-        guard let activeOverlay = activeOverlay else {
-            return
-        }
-        animator.animationDirection = .Reverse
-        animator.transition(nil, animated: animated) { (finished : Bool) in
-            activeOverlay.willMoveToParentViewController(nil)
-            activeOverlay.removeFromParentViewController()
-            activeOverlay.didMoveToParentViewController(nil)
-            
-            self.activeOverlay = nil
-        }
-    }
-    
+    static let showOverlay = #selector(OverlayViewController.show(overlay:sender:))
 }
 
 //MARK: - ShowOverlaySegue Definition
 
-public class ShowOverlaySegue: UIStoryboardSegue {
+open class ShowOverlaySegue: UIStoryboardSegue {
     
-    public override func perform() {
-        var responder : UIResponder = sourceViewController
+    open override func perform() {
+        var responder : UIResponder = source
         while true {
             if let aViewController = responder as? UIViewController,
-                let target = aViewController.targetViewControllerForAction(.showOverlay, sender: self) {
+                let target = aViewController.targetViewController(forAction: .showOverlay, sender: self) {
                 responder = target
             }
             
-            if let supportsOverlay = responder as? ShowOverlaySegueSupporting {
-                supportsOverlay.showOverlay(destinationViewController, sender: self)
+            if let ovc = responder as? OverlayViewController {
+                ovc.show(overlay: destination, sender: self)
                 break;
             }
-            if let next = responder.nextResponder() {
+            if let next = responder.next {
                 responder = next
             } else {
                 fatalError("Could not find anything in UIResponder chain to handle action \(Selector.showOverlay)")
@@ -95,14 +61,14 @@ public class ShowOverlaySegue: UIStoryboardSegue {
 
 public extension UIViewController {
     
-    public var overlayViewController : ShowOverlaySegueSupporting? {
+    public var overlayViewController : OverlayViewController? {
         get {
             var viewController = self
             while true {
-                if let viewController = viewController as? ShowOverlaySegueSupporting {
+                if let viewController = viewController as? OverlayViewController {
                     return viewController
                 }
-                if let next = viewController.parentViewController {
+                if let next = viewController.parent {
                     viewController = next
                 } else {
                     return nil
