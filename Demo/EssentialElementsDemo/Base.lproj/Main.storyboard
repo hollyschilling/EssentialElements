@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n8j-pS-R90">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n8j-pS-R90">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Overlay Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="Ula-eW-Usr">
             <objects>
-                <navigationController id="n8j-pS-R90" customClass="OverlayNavigationController" customModule="EssentialElements" sceneMemberID="viewController">
+                <navigationController id="n8j-pS-R90" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iTO-T2-Q9n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,11 +31,10 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pt-Uv-ZcM">
-                                <rect key="frame" x="0.0" y="350" width="600" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="cyO-Yv-sZm"/>
                                 </constraints>
@@ -43,36 +43,34 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2H-BX-XSH">
-                                <rect key="frame" x="0.0" y="64" width="600" height="286"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnB-PP-QjK" customClass="BorderedButton" customModule="EssentialElements">
-                                        <rect key="frame" x="240" y="118" width="120" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TTM-Cc-Bk6"/>
                                             <constraint firstAttribute="width" constant="120" id="mAc-xm-SkC"/>
                                         </constraints>
                                         <state key="normal" title="Full Overlay">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="highlighted">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="eCh-q6-99q" kind="custom" customClass="ShowOverlaySegue" customModule="EssentialElements" id="Ldl-Co-qIU"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="FnB-PP-QjK" firstAttribute="centerX" secondItem="D2H-BX-XSH" secondAttribute="centerX" id="Ro6-8g-8N6"/>
                                     <constraint firstItem="FnB-PP-QjK" firstAttribute="centerY" secondItem="D2H-BX-XSH" secondAttribute="centerY" id="rsX-fM-dhx"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2pt-Uv-ZcM" secondAttribute="trailing" id="101-wv-urS"/>
                             <constraint firstAttribute="trailing" secondItem="D2H-BX-XSH" secondAttribute="trailing" id="5wz-ZS-jUT"/>
@@ -98,23 +96,20 @@
                         <viewControllerLayoutGuide type="bottom" id="udD-lf-MKc"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="XZM-LW-XGO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmm-PX-KUf" customClass="BorderedView" customModule="EssentialElements">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pZn-yT-vJc">
-                                        <rect key="frame" x="50" y="52" width="100" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNB-gD-xhT" customClass="BorderedButton" customModule="EssentialElements">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="2uj-3g-jha"/>
                                                     <constraint firstAttribute="width" constant="100" id="85B-eF-JQ4"/>
                                                 </constraints>
                                                 <state key="normal" title="Next">
-                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -126,13 +121,12 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mII-Xk-fwl" customClass="BorderedButton" customModule="EssentialElements">
-                                                <rect key="frame" x="0.0" y="52" width="100" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="BeN-rY-MzO"/>
                                                     <constraint firstAttribute="height" constant="44" id="LT7-aT-KNn"/>
                                                 </constraints>
                                                 <state key="normal" title="Dismiss">
-                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -146,7 +140,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="pZn-yT-vJc" firstAttribute="centerX" secondItem="xmm-PX-KUf" secondAttribute="centerX" id="PBN-5I-FDq"/>
                                     <constraint firstAttribute="height" constant="200" id="j87-uY-nj1"/>
@@ -161,15 +155,15 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xmm-PX-KUf" firstAttribute="centerX" secondItem="XZM-LW-XGO" secondAttribute="centerX" id="ONk-Ze-hcN"/>
                             <constraint firstItem="xmm-PX-KUf" firstAttribute="centerY" secondItem="XZM-LW-XGO" secondAttribute="centerY" id="boN-Uq-HWU"/>
@@ -189,23 +183,20 @@
                         <viewControllerLayoutGuide type="bottom" id="5Kh-Pd-kpx"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="slD-XG-lWs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIm-XC-R3I" customClass="BorderedView" customModule="EssentialElements">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wgj-u8-B72">
-                                        <rect key="frame" x="50" y="52" width="100" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHZ-Ct-Ds8" customClass="BorderedButton" customModule="EssentialElements">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="34F-B4-8Ka"/>
                                                     <constraint firstAttribute="width" constant="100" id="ylh-9V-jRf"/>
                                                 </constraints>
                                                 <state key="normal" title="Previous">
-                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -217,13 +208,12 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFv-Kl-0kn" customClass="BorderedButton" customModule="EssentialElements">
-                                                <rect key="frame" x="0.0" y="52" width="100" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="iNz-5s-oXi"/>
                                                     <constraint firstAttribute="width" constant="100" id="x6H-2o-fcy"/>
                                                 </constraints>
                                                 <state key="normal" title="Dismiss">
-                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.12549019610000001" green="0.43921568630000002" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -237,7 +227,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="wgj-u8-B72" firstAttribute="centerX" secondItem="pIm-XC-R3I" secondAttribute="centerX" id="2qe-p4-ued"/>
                                     <constraint firstItem="wgj-u8-B72" firstAttribute="centerY" secondItem="pIm-XC-R3I" secondAttribute="centerY" id="ChH-k5-SRp"/>
@@ -252,15 +242,15 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pIm-XC-R3I" firstAttribute="centerY" secondItem="slD-XG-lWs" secondAttribute="centerY" id="1R2-RF-YuW"/>
                             <constraint firstItem="pIm-XC-R3I" firstAttribute="centerX" secondItem="slD-XG-lWs" secondAttribute="centerX" id="Uv5-3w-XIs"/>
@@ -275,18 +265,21 @@
         <scene sceneID="rrx-Nn-FxB">
             <objects>
                 <viewController id="ZM2-Wo-q9N" customClass="OverlayViewController" customModule="EssentialElements" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m5B-yv-GxT"/>
+                        <viewControllerLayoutGuide type="bottom" id="a0m-Mw-H3u"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eg7-9L-A5B">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-mE-GPe" customClass="BorderedButton" customModule="EssentialElements">
-                                <rect key="frame" x="240" y="103" width="120" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="EgU-sT-mP1"/>
                                     <constraint firstAttribute="height" constant="44" id="u6n-HE-dJH"/>
                                 </constraints>
                                 <state key="normal" title="Child Overlay">
-                                    <color key="titleColor" red="0.38823529410000002" green="0.71372549019999998" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.38823529410000002" green="0.71372549019999998" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -298,7 +291,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cVW-mE-GPe" firstAttribute="centerY" secondItem="eg7-9L-A5B" secondAttribute="centerY" id="Utu-ga-Lwy"/>
                             <constraint firstItem="cVW-mE-GPe" firstAttribute="centerX" secondItem="eg7-9L-A5B" secondAttribute="centerX" id="sq5-cJ-V2w"/>
@@ -311,6 +304,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4Ex-h1-2IC"/>
+        <segue reference="Ldl-Co-qIU"/>
     </inferredMetricsTieBreakers>
 </document>

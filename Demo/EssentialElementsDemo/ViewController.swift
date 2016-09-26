@@ -28,7 +28,7 @@ import EssentialElements
 
 class ViewController: UIViewController {
 
-    @IBAction func dismissOverlay(sender : AnyObject?) {
+    @IBAction func dismissOverlay(_ sender : AnyObject?) {
         overlayViewController?.dismissOverlay(animated: true)
     }
     
