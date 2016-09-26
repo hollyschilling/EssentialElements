@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = "EssentialElements"
-  s.version     = "0.1.0"
+  s.version     = "0.2.0"
   s.summary     = "UI Elements that every iOS App needs and every iOS developer is tired of building themselves."
   s.homepage    = "https://github.com/hollyschilling/EssentialElements"
   s.license     = { :type => "MIT" }
