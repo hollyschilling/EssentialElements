@@ -4,6 +4,6 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'EssentialElementsDemo' do
-	pod 'EssentialElements'
+	pod 'EssentialElements', :path => '../'
 end
 
