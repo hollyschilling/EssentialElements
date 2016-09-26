@@ -54,6 +54,31 @@ public class OverlayViewController: UIViewController {
     
     public var activeOverlay: UIViewController?
     
+    //MARK: - Life Cycle
+    
+    public init(rootViewController : UIViewController) {
+        super.init(nibName: nil, bundle: nil)
+        willMove(toParentViewController: rootViewController)
+        addChildViewController(rootViewController)
+        didMove(toParentViewController: rootViewController)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    public override func loadView() {
+        super.loadView()
+        view.backgroundColor = .clear
+        if let child = childViewControllers.first {
+            let childView = child.view!
+            childView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            childView.frame = view.bounds
+            view.addSubview(childView)
+        }
+        
+    }
+    
     //MARK: - OverlaySegueSupporting Methods
 
     @objc public func show(overlay: UIViewController, sender: AnyObject?) {
