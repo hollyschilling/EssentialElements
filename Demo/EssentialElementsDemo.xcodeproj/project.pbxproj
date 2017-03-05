@@ -12,6 +12,9 @@
 		179F40681D1DCC55003C84B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179F40661D1DCC55003C84B2 /* Main.storyboard */; };
 		179F406A1D1DCC55003C84B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179F40691D1DCC55003C84B2 /* Assets.xcassets */; };
 		179F406D1D1DCC55003C84B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179F406B1D1DCC55003C84B2 /* LaunchScreen.storyboard */; };
+		17A5E7741E6CABD200F9A32C /* TrivialObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A5E7731E6CABD200F9A32C /* TrivialObjectViewController.swift */; };
+		17A5E7781E6CAE0500F9A32C /* TrivialModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17A5E7751E6CAC0C00F9A32C /* TrivialModel.xcdatamodeld */; };
+		17A5E77A1E6CB2CE00F9A32C /* TrivialItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A5E7791E6CB2CE00F9A32C /* TrivialItemView.swift */; };
 		F8095E05982CDFCA27C3C1FA /* Pods_EssentialElementsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71405276D0C90F3D91042E0 /* Pods_EssentialElementsDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 		179F40691D1DCC55003C84B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		179F406C1D1DCC55003C84B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		179F406E1D1DCC55003C84B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17A5E7731E6CABD200F9A32C /* TrivialObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrivialObjectViewController.swift; sourceTree = "<group>"; };
+		17A5E7761E6CAC0C00F9A32C /* TrivialModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TrivialModel.xcdatamodel; sourceTree = "<group>"; };
+		17A5E7791E6CB2CE00F9A32C /* TrivialItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrivialItemView.swift; sourceTree = "<group>"; };
 		B24735AF46AC2ABB38A7AC47 /* Pods-EssentialElementsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssentialElementsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EssentialElementsDemo/Pods-EssentialElementsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B62C4D248277E7F1ED789075 /* Pods-EssentialElementsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EssentialElementsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-EssentialElementsDemo/Pods-EssentialElementsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D71405276D0C90F3D91042E0 /* Pods_EssentialElementsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EssentialElementsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +73,9 @@
 				179F40691D1DCC55003C84B2 /* Assets.xcassets */,
 				179F406B1D1DCC55003C84B2 /* LaunchScreen.storyboard */,
 				179F406E1D1DCC55003C84B2 /* Info.plist */,
+				17A5E7731E6CABD200F9A32C /* TrivialObjectViewController.swift */,
+				17A5E7791E6CB2CE00F9A32C /* TrivialItemView.swift */,
+				17A5E7751E6CAC0C00F9A32C /* TrivialModel.xcdatamodeld */,
 			);
 			path = EssentialElementsDemo;
 			sourceTree = "<group>";
@@ -212,7 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1747D4981D230CD000DFD14A /* ViewController.swift in Sources */,
+				17A5E77A1E6CB2CE00F9A32C /* TrivialItemView.swift in Sources */,
+				17A5E7781E6CAE0500F9A32C /* TrivialModel.xcdatamodeld in Sources */,
 				179F40631D1DCC55003C84B2 /* AppDelegate.swift in Sources */,
+				17A5E7741E6CABD200F9A32C /* TrivialObjectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +390,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		17A5E7751E6CAC0C00F9A32C /* TrivialModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				17A5E7761E6CAC0C00F9A32C /* TrivialModel.xcdatamodel */,
+			);
+			currentVersion = 17A5E7761E6CAC0C00F9A32C /* TrivialModel.xcdatamodel */;
+			path = TrivialModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 179F40571D1DCC55003C84B2 /* Project object */;
 }
