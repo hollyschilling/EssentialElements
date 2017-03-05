@@ -12,6 +12,12 @@
 		1747D4961D22469300DFD14A /* CrossFadeContainerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D4951D22469300DFD14A /* CrossFadeContainerAnimator.swift */; };
 		179F404C1D1DC766003C84B2 /* EssentialElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 179F404B1D1DC766003C84B2 /* EssentialElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		179F40541D1DC7B9003C84B2 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F40531D1DC7B9003C84B2 /* BorderedButton.swift */; };
+		17B5670E1E6BA970009A767E /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5670C1E6BA970009A767E /* ImageManager.swift */; };
+		17B567101E6BA9BC009A767E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5670F1E6BA9BC009A767E /* ListViewController.swift */; };
+		17B567141E6BAA09009A767E /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B567111E6BAA09009A767E /* ItemCollectionViewCell.swift */; };
+		17B567151E6BAA09009A767E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B567121E6BAA09009A767E /* ItemTableViewCell.swift */; };
+		17B567161E6BAA09009A767E /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B567131E6BAA09009A767E /* ItemView.swift */; };
+		17B567181E6BAA6A009A767E /* SingleCellTypeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B567171E6BAA6A009A767E /* SingleCellTypeListViewController.swift */; };
 		17D1A6FB1D1DD84E00367C1C /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FA1D1DD84E00367C1C /* BorderedView.swift */; };
 		17D1A6FD1D1DEAD600367C1C /* FunctionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FC1D1DEAD600367C1C /* FunctionAnimation.swift */; };
 		17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */; };
@@ -28,6 +34,12 @@
 		179F404B1D1DC766003C84B2 /* EssentialElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialElements.h; sourceTree = "<group>"; };
 		179F404D1D1DC766003C84B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179F40531D1DC7B9003C84B2 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderedButton.swift; path = Views/BorderedButton.swift; sourceTree = "<group>"; };
+		17B5670C1E6BA970009A767E /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		17B5670F1E6BA9BC009A767E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = ViewControllers/ListViewController.swift; sourceTree = "<group>"; };
+		17B567111E6BAA09009A767E /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = Views/ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		17B567121E6BAA09009A767E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = Views/ItemTableViewCell.swift; sourceTree = "<group>"; };
+		17B567131E6BAA09009A767E /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = Views/ItemView.swift; sourceTree = "<group>"; };
+		17B567171E6BAA6A009A767E /* SingleCellTypeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleCellTypeListViewController.swift; path = ViewControllers/SingleCellTypeListViewController.swift; sourceTree = "<group>"; };
 		17D1A6FA1D1DD84E00367C1C /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderedView.swift; path = Views/BorderedView.swift; sourceTree = "<group>"; };
 		17D1A6FC1D1DEAD600367C1C /* FunctionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunctionAnimation.swift; path = Animations/FunctionAnimation.swift; sourceTree = "<group>"; };
 		17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleOperations.swift; path = Extensions/DoubleOperations.swift; sourceTree = "<group>"; };
@@ -74,6 +86,8 @@
 		179F404A1D1DC766003C84B2 /* EssentialElements */ = {
 			isa = PBXGroup;
 			children = (
+				17B5670B1E6BA970009A767E /* Managers */,
+				17B5670D1E6BA970009A767E /* Model */,
 				1747D4901D2231EE00DFD14A /* Segues */,
 				17D1A7071D1DF34E00367C1C /* ContainerAnimators */,
 				17D1A7061D1DF33600367C1C /* Animations */,
@@ -89,10 +103,28 @@
 		179F40551D1DCAED003C84B2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				17B567111E6BAA09009A767E /* ItemCollectionViewCell.swift */,
+				17B567121E6BAA09009A767E /* ItemTableViewCell.swift */,
+				17B567131E6BAA09009A767E /* ItemView.swift */,
 				179F40531D1DC7B9003C84B2 /* BorderedButton.swift */,
 				17D1A6FA1D1DD84E00367C1C /* BorderedView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		17B5670B1E6BA970009A767E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				17B5670C1E6BA970009A767E /* ImageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		17B5670D1E6BA970009A767E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		17D1A6FE1D1DEB7100367C1C /* Extensions */ = {
@@ -108,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				17D1A7041D1DF24600367C1C /* OverlayViewController.swift */,
+				17B5670F1E6BA9BC009A767E /* ListViewController.swift */,
+				17B567171E6BAA6A009A767E /* SingleCellTypeListViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -211,14 +245,20 @@
 			files = (
 				1747D4941D22446A00DFD14A /* ThreeStageContainerAnimator.swift in Sources */,
 				1747D4961D22469300DFD14A /* CrossFadeContainerAnimator.swift in Sources */,
+				17B567101E6BA9BC009A767E /* ListViewController.swift in Sources */,
 				1747D4921D22325300DFD14A /* ShowOverlaySegue.swift in Sources */,
 				17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */,
+				17B567181E6BAA6A009A767E /* SingleCellTypeListViewController.swift in Sources */,
 				179F40541D1DC7B9003C84B2 /* BorderedButton.swift in Sources */,
 				17D1A7021D1DED7300367C1C /* CGFloatOperations.swift in Sources */,
 				17D1A7051D1DF24600367C1C /* OverlayViewController.swift in Sources */,
 				17D1A6FD1D1DEAD600367C1C /* FunctionAnimation.swift in Sources */,
 				17D1A6FB1D1DD84E00367C1C /* BorderedView.swift in Sources */,
+				17B5670E1E6BA970009A767E /* ImageManager.swift in Sources */,
 				17D1A7091D1DF39900367C1C /* ContainerAnimator.swift in Sources */,
+				17B567151E6BAA09009A767E /* ItemTableViewCell.swift in Sources */,
+				17B567161E6BAA09009A767E /* ItemView.swift in Sources */,
+				17B567141E6BAA09009A767E /* ItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
