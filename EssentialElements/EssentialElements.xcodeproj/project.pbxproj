@@ -22,6 +22,7 @@
 		17C2B1391E6F37E70094ED0E /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B12B1E6F37E70094ED0E /* ItemCollectionViewCell.swift */; };
 		17C2B13A1E6F37E70094ED0E /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B12C1E6F37E70094ED0E /* ItemTableViewCell.swift */; };
 		17C2B13B1E6F37E70094ED0E /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B12D1E6F37E70094ED0E /* ItemView.swift */; };
+		17C2B13D1E6F38FE0094ED0E /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B13C1E6F38FE0094ED0E /* ListCollectionViewController.swift */; };
 		17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */; };
 		17D1A7021D1DED7300367C1C /* CGFloatOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		17C2B12B1E6F37E70094ED0E /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		17C2B12C1E6F37E70094ED0E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		17C2B12D1E6F37E70094ED0E /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		17C2B13C1E6F38FE0094ED0E /* ListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
 		17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleOperations.swift; path = Extensions/DoubleOperations.swift; sourceTree = "<group>"; };
 		17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatOperations.swift; path = Extensions/CGFloatOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 			children = (
 				17C2B1281E6F37E70094ED0E /* ListTableViewController.swift */,
 				17C2B1291E6F37E70094ED0E /* SimpleListTableViewController.swift */,
+				17C2B13C1E6F38FE0094ED0E /* ListCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				17C2B1351E6F37E70094ED0E /* BorderedView.swift in Sources */,
 				17C2B1371E6F37E70094ED0E /* ListTableViewController.swift in Sources */,
 				17C2B13B1E6F37E70094ED0E /* ItemView.swift in Sources */,
+				17C2B13D1E6F38FE0094ED0E /* ListCollectionViewController.swift in Sources */,
 				17C2B1311E6F37E70094ED0E /* ThreeStageContainerAnimator.swift in Sources */,
 				17C2B1341E6F37E70094ED0E /* BorderedButton.swift in Sources */,
 				17C2B12F1E6F37E70094ED0E /* ContainerAnimator.swift in Sources */,
