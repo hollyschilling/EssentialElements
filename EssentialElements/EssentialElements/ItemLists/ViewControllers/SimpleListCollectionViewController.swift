@@ -1,8 +1,8 @@
 //
-//  SimpleListTableViewController.swift
+//  SimpleListCollectionViewController.swift
 //  EssentialElements
 //
-//  Created by Holly Schilling on 3/4/17.
+//  Created by Holly Schilling on 3/7/17.
 //  Copyright © 2017 Better Practice Solutions. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,18 +27,18 @@ import Foundation
 import UIKit
 import CoreData
 
-open class SimpleListTableViewController<ItemType: NSFetchRequestResult, ItemViewType: ItemView<ItemType>>: ListTableViewController<ItemType> {
+open class SimpleListCollectionViewController<ItemType: NSFetchRequestResult, ItemViewType: ItemView<ItemType>>: ListCollectionViewController<ItemType> {
     
     open var itemIdentifier: String = "ItemIdentifier"
     
     open override func viewDidLoad() {
         // Register View first so that it is done before `viewDidLoadHandler` is called
-        tableView.register(ItemTableViewCell<ItemViewType>.self, forCellReuseIdentifier: itemIdentifier)
+        collectionView?.register(ItemCollectionViewCell<ItemViewType>.self, forCellWithReuseIdentifier: itemIdentifier)
         super.viewDidLoad()
     }
     
-    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: itemIdentifier, for: indexPath) as! ItemTableViewCell<ItemViewType>
+    open override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: itemIdentifier, for: indexPath) as! ItemCollectionViewCell<ItemViewType>
         configure(cell: cell, for: indexPath)
         return cell
     }
