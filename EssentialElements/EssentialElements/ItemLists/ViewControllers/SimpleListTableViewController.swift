@@ -1,5 +1,5 @@
 //
-//  SingleCellTypeListViewController.swift
+//  SimpleListTableViewController.swift
 //  EssentialElements
 //
 //  Created by Holly Schilling on 3/4/17.
@@ -27,7 +27,7 @@ import Foundation
 import UIKit
 import CoreData
 
-open class SingleCellTypeListViewController<ItemType: NSFetchRequestResult, ItemViewType: ItemView<ItemType>>: ListViewController<ItemType> {
+open class SimpleListTableViewController<ItemType: NSFetchRequestResult, ItemViewType: ItemView<ItemType>>: ListTableViewController<ItemType> {
     
     open var cellIdentifier: String = "CellIdentifier"
     

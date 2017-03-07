@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  ListTableViewController.swift
 //  EssentialElements
 //
 //  Created by Holly Schilling on 2/25/17.
@@ -27,7 +27,7 @@ import Foundation
 import UIKit
 import CoreData
 
-open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewController, NSFetchedResultsControllerDelegate {
+open class ListTableViewController<ItemType: NSFetchRequestResult>: UITableViewController, NSFetchedResultsControllerDelegate {
     
     open var viewDidLoadHandler: ((_ tableView: UITableView) -> Void)? {
         didSet {
