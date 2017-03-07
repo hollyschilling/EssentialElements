@@ -25,6 +25,7 @@
 		17C2B13D1E6F38FE0094ED0E /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B13C1E6F38FE0094ED0E /* ListCollectionViewController.swift */; };
 		17C2B1401E6F47FF0094ED0E /* FetchedResultsChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B13F1E6F47FF0094ED0E /* FetchedResultsChange.swift */; };
 		17C2B1421E6F4A7E0094ED0E /* ItemCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1411E6F4A7E0094ED0E /* ItemCollectionReusableView.swift */; };
+		17C2B1441E6F4D500094ED0E /* UIView+FullSized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1431E6F4D500094ED0E /* UIView+FullSized.swift */; };
 		17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */; };
 		17D1A7021D1DED7300367C1C /* CGFloatOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		17C2B13C1E6F38FE0094ED0E /* ListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
 		17C2B13F1E6F47FF0094ED0E /* FetchedResultsChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsChange.swift; sourceTree = "<group>"; };
 		17C2B1411E6F4A7E0094ED0E /* ItemCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionReusableView.swift; sourceTree = "<group>"; };
+		17C2B1431E6F4D500094ED0E /* UIView+FullSized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+FullSized.swift"; path = "Extensions/UIView+FullSized.swift"; sourceTree = "<group>"; };
 		17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleOperations.swift; path = Extensions/DoubleOperations.swift; sourceTree = "<group>"; };
 		17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatOperations.swift; path = Extensions/CGFloatOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +203,7 @@
 			children = (
 				17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */,
 				17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */,
+				17C2B1431E6F4D500094ED0E /* UIView+FullSized.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				17C2B12F1E6F37E70094ED0E /* ContainerAnimator.swift in Sources */,
 				17C2B1301E6F37E70094ED0E /* CrossFadeContainerAnimator.swift in Sources */,
 				17C2B13A1E6F37E70094ED0E /* ItemTableViewCell.swift in Sources */,
+				17C2B1441E6F4D500094ED0E /* UIView+FullSized.swift in Sources */,
 				17C2B1381E6F37E70094ED0E /* SimpleListTableViewController.swift in Sources */,
 				17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */,
 				17C2B1421E6F4A7E0094ED0E /* ItemCollectionReusableView.swift in Sources */,

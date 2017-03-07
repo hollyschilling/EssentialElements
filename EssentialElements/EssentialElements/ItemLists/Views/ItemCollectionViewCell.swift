@@ -33,18 +33,12 @@ open class ItemCollectionViewCell<ItemViewType: UIView>: UICollectionViewCell {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
+        contentView.addFullSized(subview: itemView)
     }
         
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
+        contentView.addFullSized(subview: itemView)
     }
-
-    
 }

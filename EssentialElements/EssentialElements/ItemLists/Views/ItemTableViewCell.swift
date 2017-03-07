@@ -33,16 +33,12 @@ open class ItemTableViewCell<ItemViewType: UIView>: UITableViewCell {
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
+        contentView.addFullSized(subview: itemView)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
+        contentView.addFullSized(subview: itemView)
     }
 }
