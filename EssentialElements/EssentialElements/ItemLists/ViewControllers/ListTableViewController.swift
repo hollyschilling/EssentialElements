@@ -69,7 +69,7 @@ open class ListTableViewController<ItemType: NSFetchRequestResult>: UITableViewC
     
     //MARK: - Instance Methods
     
-    func updateBadge() {
+    open func updateBadge() {
         guard let badgingTarget = badgingTarget else {
             return
         }
