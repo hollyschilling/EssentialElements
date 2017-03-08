@@ -1,8 +1,8 @@
 //
-//  ItemTableViewCell.swift
+//  FetchedResultsChange.swift
 //  EssentialElements
 //
-//  Created by Holly Schilling on 2/26/17.
+//  Created by Holly Schilling on 3/7/17.
 //  Copyright © 2017 Better Practice Solutions. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,25 +24,11 @@
 //  THE SOFTWARE.
 
 import Foundation
-import UIKit
 
-open class ItemTableViewCell<ItemViewType: UIView>: UITableViewCell {
-    
-    open var itemView: ItemViewType = ItemViewType(frame: CGRect.zero)
-    
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
-    }
+public enum FetchedResultsChange {
+    case insert(IndexPath)
+    case delete(IndexPath)
+    case move(IndexPath, IndexPath)
+    case update(IndexPath)
 }
+

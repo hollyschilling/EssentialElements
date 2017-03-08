@@ -1,8 +1,8 @@
 //
-//  ItemCollectionViewCell.swift
+//  ItemCollectionReusableView.swift
 //  EssentialElements
 //
-//  Created by Holly Schilling on 2/26/17.
+//  Created by Holly Schilling on 3/7/17.
 //  Copyright © 2017 Better Practice Solutions. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,25 +26,19 @@
 import Foundation
 import UIKit
 
-open class ItemCollectionViewCell<ItemViewType: UIView>: UICollectionViewCell {
-
+open class ItemCollectionReusableView<ItemViewType: UIView>: UICollectionReusableView {
+        
     open var itemView: ItemViewType = ItemViewType(frame: CGRect.zero)
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
+
+        addFullSized(subview: itemView)
     }
-        
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        itemView.frame = contentView.bounds
-        contentView.addSubview(itemView)
-    }
 
-    
+        addFullSized(subview: itemView)
+    }
 }

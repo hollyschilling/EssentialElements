@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  ListTableViewController.swift
 //  EssentialElements
 //
 //  Created by Holly Schilling on 2/25/17.
@@ -27,25 +27,23 @@ import Foundation
 import UIKit
 import CoreData
 
-open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewController, NSFetchedResultsControllerDelegate {
+open class ListTableViewController<ItemType: NSFetchRequestResult>: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    open var viewDidLoadHandler: ((_ tableView: UITableView) -> Void)? {
+    open var viewDidLoadHandler: ((_ controller: ListTableViewController<ItemType>) -> Void)? {
         didSet {
             if isViewLoaded {
-                viewDidLoadHandler?(tableView)
+                viewDidLoadHandler?(self)
             }
         }
     }
     
-    open var didSelectRowHandler: ((IndexPath) -> Void)?
+    open var didSelectItemHandler: ((_ controller: ListTableViewController<ItemType>, _ indexPath: IndexPath) -> Void)?
     
     open var contents: NSFetchedResultsController<ItemType>? {
         didSet {
             contents?.delegate = self
             updateBadge()
-            if isViewLoaded {
-                tableView.reloadData()
-            }
+            tableView?.reloadData()
         }
     }
     
@@ -55,11 +53,13 @@ open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewContro
             updateBadge()
         }
     }
+
+    //MARK: - Lifecycle
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         updateBadge()
-        viewDidLoadHandler?(tableView)
+        viewDidLoadHandler?(self)
     }
     
     open override func didMove(toParentViewController parent: UIViewController?) {
@@ -67,7 +67,9 @@ open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewContro
         updateBadge()
     }
     
-    func updateBadge() {
+    //MARK: - Instance Methods
+    
+    open func updateBadge() {
         guard let badgingTarget = badgingTarget else {
             return
         }
@@ -85,7 +87,35 @@ open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewContro
         itemView.item = item
     }
     
-    //MARK: - UITableViewDelegate
+    open func apply(changes: [FetchedResultsChange]) {
+        guard let tableView = tableView else {
+            return
+        }
+        
+        tableView.beginUpdates()
+        for aChange in changes {
+            apply(change: aChange)
+        }
+        tableView.endUpdates()
+    }
+    
+    open func apply(change: FetchedResultsChange) {
+        guard let tableView = tableView else {
+            return
+        }
+        switch change {
+        case .insert(let indexPath):
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        case .delete(let indexPath):
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        case .move(let oldIndexPath, let newIndexPath):
+            tableView.moveRow(at: oldIndexPath, to: newIndexPath)
+        case .update(let indexPath):
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+
+    //MARK: - UITableView Delegate and DataSource
     
     open override func numberOfSections(in tableView: UITableView) -> Int {
         return contents?.sections?.count ?? 0
@@ -96,7 +126,7 @@ open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewContro
     }
     
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectRowHandler?(indexPath)
+        didSelectItemHandler?(self, indexPath)
     }
     
     open override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -114,15 +144,6 @@ open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewContro
         tableView.beginUpdates()
     }
     
-    open func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        updateBadge()
-        guard controller == contents else {
-            return
-        }
-        
-        tableView.endUpdates()
-    }
-    
     open func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                          didChange anObject: Any,
                          at indexPath: IndexPath?,
@@ -134,14 +155,22 @@ open class ListViewController<ItemType: NSFetchRequestResult>: UITableViewContro
         
         switch type {
         case .insert:
-            tableView.insertRows(at: [newIndexPath!], with: .automatic)
+            apply(change: .insert(newIndexPath!))
         case .delete:
-            tableView.deleteRows(at: [indexPath!], with: .automatic)
+            apply(change: .delete(indexPath!))
         case .update:
-            tableView.reloadRows(at: [indexPath!], with: .automatic)
+            apply(change: .update(indexPath!))
         case .move:
-            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+            apply(change: .move(indexPath!, newIndexPath!))
         }
     }
 
+    open func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        updateBadge()
+        guard controller == contents else {
+            return
+        }
+        
+        tableView.endUpdates()
+    }
 }

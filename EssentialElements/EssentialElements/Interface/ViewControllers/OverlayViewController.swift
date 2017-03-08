@@ -27,11 +27,19 @@ import UIKit
 
 //MARK: - OverlayViewController Definition
 
-public class OverlayViewController: UIViewController {
+open class OverlayViewController: UIViewController {
 
-    public var animatorType: ContainerAnimator.Type = CrossFadeContainerAnimator.self
+    @discardableResult
+    open class func installController(in window: UIWindow) -> OverlayViewController {
+        let rootViewController = window.rootViewController
+        let controller = OverlayViewController(rootViewController: rootViewController)
+        window.rootViewController = controller
+        return controller
+    }
+    
+    open var animatorType: ContainerAnimator.Type = CrossFadeContainerAnimator.self
     private var _animator: ContainerAnimator?
-    public var animator: ContainerAnimator {
+    open var animator: ContainerAnimator {
         get {
             if _animator == nil {
                 _animator = animatorType.init(containerView: view)
@@ -52,40 +60,39 @@ public class OverlayViewController: UIViewController {
         }
     }
     
-    public var activeOverlay: UIViewController?
+    open var activeOverlay: UIViewController?
     
     //MARK: - Life Cycle
     
-    public init(rootViewController : UIViewController) {
+    public init(rootViewController: UIViewController?) {
         super.init(nibName: nil, bundle: nil)
-        willMove(toParentViewController: rootViewController)
-        addChildViewController(rootViewController)
-        didMove(toParentViewController: rootViewController)
+        if let rootViewController = rootViewController {
+            willMove(toParentViewController: rootViewController)
+            addChildViewController(rootViewController)
+            didMove(toParentViewController: rootViewController)
+        }
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    public override func loadView() {
+    open override func loadView() {
         super.loadView()
         view.backgroundColor = .clear
         if let child = childViewControllers.first {
-            let childView = child.view!
-            childView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            childView.frame = view.bounds
-            view.addSubview(childView)
+            view.addFullSized(subview: child.view)
         }
         
     }
     
     //MARK: - OverlaySegueSupporting Methods
 
-    @objc public func show(overlay: UIViewController, sender: AnyObject?) {
+    @objc open func show(overlay: UIViewController, sender: AnyObject?) {
         present(overlay: overlay, animated: true, completion: nil)
     }
 
-    public func dismissOverlay(animated: Bool) {
+    open func dismissOverlay(animated: Bool) {
         
         guard let activeOverlay = activeOverlay else {
             return
@@ -100,21 +107,21 @@ public class OverlayViewController: UIViewController {
         }
     }
 
-    public func present(overlay: UIViewController, animated: Bool, completion: ((Bool)->Void)? = nil) {
+    open func present(overlay: UIViewController, animated: Bool, completion: ((Bool)->Void)? = nil) {
 
         overlay.willMove(toParentViewController: self)
         addChildViewController(overlay)
         overlay.didMove(toParentViewController: self)
         
         animator.animationDirection = .forward
-        animator.transition(overlay.view, animated: true) { (finished : Bool) in
-            if let oldOverlay = self.activeOverlay {
-                oldOverlay.willMove(toParentViewController: nil)
-                oldOverlay.removeFromParentViewController()
-                oldOverlay.didMove(toParentViewController: nil)
-            }
-            
-            self.activeOverlay = overlay
+        animator.transition(overlay.view, animated: true)
+
+        if let oldOverlay = activeOverlay {
+            oldOverlay.willMove(toParentViewController: nil)
+            oldOverlay.removeFromParentViewController()
+            oldOverlay.didMove(toParentViewController: nil)
         }
+        
+        activeOverlay = overlay
     }
 }

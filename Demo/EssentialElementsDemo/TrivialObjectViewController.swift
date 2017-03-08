@@ -27,13 +27,13 @@ class TrivialObjectViewController: UIViewController {
         return context
     }()
     
-    lazy var trivialItemList: SingleCellTypeListViewController<TrivialObject, TrivialItemView> = SingleCellTypeListViewController(style: .grouped)
+    lazy var trivialItemList: SimpleListTableViewController<TrivialObject, TrivialItemView> = SimpleListTableViewController(style: .grouped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Add selection handler
-        trivialItemList.didSelectRowHandler = { [unowned self] (indexPath: IndexPath) in
+        trivialItemList.didSelectItemHandler = { [unowned self] (_, indexPath: IndexPath) in
             guard let object = self.trivialItemList.contents?.object(at: indexPath), let date = object.creationDate else {
                 return
             }

@@ -1,8 +1,8 @@
 //
-//  SingleCellTypeListViewController.swift
+//  DesignableItemView.swift
 //  EssentialElements
 //
-//  Created by Holly Schilling on 3/4/17.
+//  Created by Holly Schilling on 3/7/17.
 //  Copyright © 2017 Better Practice Solutions. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,21 +25,30 @@
 
 import Foundation
 import UIKit
-import CoreData
 
-open class SingleCellTypeListViewController<ItemType: NSFetchRequestResult, ItemViewType: ItemView<ItemType>>: ListViewController<ItemType> {
+// Adapted from NibDesignable
+@IBDesignable
+open class DesignableItemView<ItemType>: ItemView<ItemType> {
     
-    open var cellIdentifier: String = "CellIdentifier"
-    
-    open override func viewDidLoad() {
-        // Register View first so that it is done before `viewDidLoadHandler` is called
-        tableView.register(ItemTableViewCell<ItemViewType>.self, forCellReuseIdentifier: cellIdentifier)
-        super.viewDidLoad()
+    public func loadNib() {
+        let bundle = Bundle(for: type(of: self))
+        let nibName = type(of: self).description().components(separatedBy: ".").last!
+
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        if let contentsView =  nib.instantiate(withOwner: self, options: nil).first as? UIView {
+            addFullSized(subview: contentsView)
+        }
     }
     
-    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ItemTableViewCell<ItemViewType>
-        configure(cell: cell, for: indexPath)
-        return cell
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        loadNib()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        loadNib()
     }
 }
