@@ -28,7 +28,7 @@ import UIKit
 
 // Adapted from NibDesignable
 @IBDesignable
-open class DesignableItemView<ItemView>: UIView {
+open class DesignableItemView<ItemType>: ItemView<ItemType> {
     
     public func loadNib() {
         let bundle = Bundle(for: type(of: self))
