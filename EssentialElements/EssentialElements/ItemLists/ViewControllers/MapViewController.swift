@@ -37,6 +37,7 @@ open class MapViewController: UIViewController, MKMapViewDelegate {
         let map = MKMapView(frame: view.bounds)
         map.delegate = self
         view.addFullSized(subview: map)
+        mapView = map
     }
     
     //MARK: - MKMapViewDelegate

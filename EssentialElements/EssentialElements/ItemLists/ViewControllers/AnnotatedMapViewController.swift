@@ -60,6 +60,9 @@ open class AnnotatedMapViewController<ItemType>: MapViewController, NSFetchedRes
     open override func viewDidLoad() {
         super.viewDidLoad()
         updateBadge()
+        if let newAnnotations = contents?.fetchedObjects {
+            mapView?.addAnnotations(newAnnotations)
+        }
         viewDidLoadHandler?(self)
     }
     
