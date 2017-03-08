@@ -29,6 +29,9 @@
 		17C2B1461E6F522F0094ED0E /* SimpleListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1451E6F522F0094ED0E /* SimpleListCollectionViewController.swift */; };
 		17C2B1511E6F59040094ED0E /* DesignableItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1501E6F59040094ED0E /* DesignableItemView.swift */; };
 		17C2B1531E6F5C370094ED0E /* ItemTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1521E6F5C370094ED0E /* ItemTableViewHeaderFooterView.swift */; };
+		17C2B1551E6F5E050094ED0E /* AnnotatedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1541E6F5E050094ED0E /* AnnotatedMapViewController.swift */; };
+		17C2B1571E6F6D250094ED0E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1561E6F6D250094ED0E /* MapViewController.swift */; };
+		17C2B1591E6F76FF0094ED0E /* SimpleAnnotatedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1581E6F76FF0094ED0E /* SimpleAnnotatedMapViewController.swift */; };
 		17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */; };
 		17D1A7021D1DED7300367C1C /* CGFloatOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,9 @@
 		17C2B1451E6F522F0094ED0E /* SimpleListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleListCollectionViewController.swift; sourceTree = "<group>"; };
 		17C2B1501E6F59040094ED0E /* DesignableItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableItemView.swift; sourceTree = "<group>"; };
 		17C2B1521E6F5C370094ED0E /* ItemTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		17C2B1541E6F5E050094ED0E /* AnnotatedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedMapViewController.swift; sourceTree = "<group>"; };
+		17C2B1561E6F6D250094ED0E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		17C2B1581E6F76FF0094ED0E /* SimpleAnnotatedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleAnnotatedMapViewController.swift; sourceTree = "<group>"; };
 		17D1A6FF1D1DEB9A00367C1C /* DoubleOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleOperations.swift; path = Extensions/DoubleOperations.swift; sourceTree = "<group>"; };
 		17D1A7011D1DED7300367C1C /* CGFloatOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatOperations.swift; path = Extensions/CGFloatOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +188,9 @@
 				17C2B1291E6F37E70094ED0E /* SimpleListTableViewController.swift */,
 				17C2B13C1E6F38FE0094ED0E /* ListCollectionViewController.swift */,
 				17C2B1451E6F522F0094ED0E /* SimpleListCollectionViewController.swift */,
+				17C2B1561E6F6D250094ED0E /* MapViewController.swift */,
+				17C2B1541E6F5E050094ED0E /* AnnotatedMapViewController.swift */,
+				17C2B1581E6F76FF0094ED0E /* SimpleAnnotatedMapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,16 +313,19 @@
 				17C2B13B1E6F37E70094ED0E /* ItemView.swift in Sources */,
 				17C2B13D1E6F38FE0094ED0E /* ListCollectionViewController.swift in Sources */,
 				17C2B1531E6F5C370094ED0E /* ItemTableViewHeaderFooterView.swift in Sources */,
+				17C2B1571E6F6D250094ED0E /* MapViewController.swift in Sources */,
 				17C2B1311E6F37E70094ED0E /* ThreeStageContainerAnimator.swift in Sources */,
 				17C2B1341E6F37E70094ED0E /* BorderedButton.swift in Sources */,
 				17C2B12F1E6F37E70094ED0E /* ContainerAnimator.swift in Sources */,
 				17C2B1301E6F37E70094ED0E /* CrossFadeContainerAnimator.swift in Sources */,
+				17C2B1551E6F5E050094ED0E /* AnnotatedMapViewController.swift in Sources */,
 				17C2B13A1E6F37E70094ED0E /* ItemTableViewCell.swift in Sources */,
 				17C2B1441E6F4D500094ED0E /* UIView+FullSized.swift in Sources */,
 				17C2B1381E6F37E70094ED0E /* SimpleListTableViewController.swift in Sources */,
 				17D1A7001D1DEB9A00367C1C /* DoubleOperations.swift in Sources */,
 				17C2B1421E6F4A7E0094ED0E /* ItemCollectionReusableView.swift in Sources */,
 				17C2B12E1E6F37E70094ED0E /* FunctionAnimation.swift in Sources */,
+				17C2B1591E6F76FF0094ED0E /* SimpleAnnotatedMapViewController.swift in Sources */,
 				17D1A7021D1DED7300367C1C /* CGFloatOperations.swift in Sources */,
 				17C2B1361E6F37E70094ED0E /* ImageManager.swift in Sources */,
 				17C2B1511E6F59040094ED0E /* DesignableItemView.swift in Sources */,
