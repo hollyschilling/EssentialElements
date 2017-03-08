@@ -63,7 +63,7 @@ public extension UIViewController {
     
     public var overlayViewController : OverlayViewController? {
         get {
-            if let viewController = parent as? OverlayViewController {
+            if let viewController = self as? OverlayViewController {
                 return viewController
             } else {
                 return parent?.overlayViewController
