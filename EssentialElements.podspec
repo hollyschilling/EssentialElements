@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors     = { "hollyschilling" => "holly.a.schilling@outlook.com" }
 
   s.requires_arc = true
-  s.ios.deployment_target = "9.2"
+  s.ios.deployment_target = "9.0"
   s.source   = { :git => "https://github.com/hollyschilling/EssentialElements.git", :tag => s.version }
   s.source_files = "EssentialElements/EssentialElements/**/*.swift"
 end
