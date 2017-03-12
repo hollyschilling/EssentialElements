@@ -11,6 +11,7 @@
 		170B7E5A1E70AF54002D7347 /* FormValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B7E541E70AF54002D7347 /* FormValidationManager.swift */; };
 		170B7E5B1E70AF54002D7347 /* FormValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B7E551E70AF54002D7347 /* FormValidators.swift */; };
 		170B7E5C1E70AF54002D7347 /* BlockTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B7E571E70AF54002D7347 /* BlockTimer.swift */; };
+		179311261E74E196008A7E5F /* SegmentedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179311251E74E196008A7E5F /* SegmentedTabBar.swift */; };
 		179F404C1D1DC766003C84B2 /* EssentialElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 179F404B1D1DC766003C84B2 /* EssentialElements.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17C2B12E1E6F37E70094ED0E /* FunctionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B1181E6F37E70094ED0E /* FunctionAnimation.swift */; };
 		17C2B12F1E6F37E70094ED0E /* ContainerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2B11A1E6F37E70094ED0E /* ContainerAnimator.swift */; };
@@ -45,6 +46,7 @@
 		170B7E541E70AF54002D7347 /* FormValidationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidationManager.swift; sourceTree = "<group>"; };
 		170B7E551E70AF54002D7347 /* FormValidators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidators.swift; sourceTree = "<group>"; };
 		170B7E571E70AF54002D7347 /* BlockTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockTimer.swift; sourceTree = "<group>"; };
+		179311251E74E196008A7E5F /* SegmentedTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedTabBar.swift; sourceTree = "<group>"; };
 		179F40481D1DC766003C84B2 /* EssentialElements.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		179F404B1D1DC766003C84B2 /* EssentialElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialElements.h; sourceTree = "<group>"; };
 		179F404D1D1DC766003C84B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				17C2B1221E6F37E70094ED0E /* BorderedButton.swift */,
 				17C2B1231E6F37E70094ED0E /* BorderedView.swift */,
+				179311251E74E196008A7E5F /* SegmentedTabBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179311261E74E196008A7E5F /* SegmentedTabBar.swift in Sources */,
 				17C2B1401E6F47FF0094ED0E /* FetchedResultsChange.swift in Sources */,
 				17C2B1461E6F522F0094ED0E /* SimpleListCollectionViewController.swift in Sources */,
 				17C2B1321E6F37E70094ED0E /* ShowOverlaySegue.swift in Sources */,
