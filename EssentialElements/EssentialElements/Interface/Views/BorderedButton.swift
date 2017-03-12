@@ -57,7 +57,7 @@ open class BorderedButton: UIButton {
     open var normalColor: UIColor? {
         didSet {
             let image = normalColor.flatMap({ UIImage(color: $0) })
-            setImage(image, for: .normal)
+            setBackgroundImage(image, for: .normal)
         }
     }
     
@@ -65,7 +65,7 @@ open class BorderedButton: UIButton {
     open var disabledColor: UIColor? {
         didSet {
             let image = disabledColor.flatMap({ UIImage(color: $0) })
-            setImage(image, for: .disabled)
+            setBackgroundImage(image, for: .disabled)
         }
     }
     
@@ -73,7 +73,7 @@ open class BorderedButton: UIButton {
     open var highlightedColor: UIColor? {
         didSet {
             let image = highlightedColor.flatMap({ UIImage(color: $0) })
-            setImage(image, for: .highlighted)
+            setBackgroundImage(image, for: .highlighted)
         }
     }
     
@@ -81,7 +81,7 @@ open class BorderedButton: UIButton {
     open var selectedColor: UIColor? {
         didSet {
             let image = selectedColor.flatMap({ UIImage(color: $0) })
-            setImage(image, for: .selected)
+            setBackgroundImage(image, for: .selected)
         }
     }
     
@@ -89,7 +89,7 @@ open class BorderedButton: UIButton {
     open var highlightedSelectedColor: UIColor? {
         didSet {
             let image = highlightedSelectedColor.flatMap({ UIImage(color: $0) })
-            setImage(image, for: [.highlighted, .selected])
+            setBackgroundImage(image, for: [.highlighted, .selected])
         }
     }
     
