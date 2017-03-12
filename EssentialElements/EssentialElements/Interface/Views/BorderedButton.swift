@@ -29,36 +29,78 @@ import UIKit
 open class BorderedButton: UIButton {
     
     fileprivate static let TextColorKey = "textColor"
-
+    
     //MARK: - Inspectable Properties
     
     @IBInspectable
-    open var cornerRadius : CGFloat = 5 {
+    open var cornerRadius: CGFloat = 5 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
     
     @IBInspectable
-    open var borderWidth : CGFloat = 2 {
+    open var borderWidth: CGFloat = 2 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
     @IBInspectable
-    open var borderColor : UIColor? {
+    open var borderColor: UIColor? {
         didSet {
             applyStyle()
         }
     }
+    
+    @IBInspectable
+    open var normalColor: UIColor? {
+        didSet {
+            let image = normalColor.flatMap({ UIImage(color: $0) })
+            setImage(image, for: .normal)
+        }
+    }
+    
+    @IBInspectable
+    open var disabledColor: UIColor? {
+        didSet {
+            let image = disabledColor.flatMap({ UIImage(color: $0) })
+            setImage(image, for: .disabled)
+        }
+    }
+    
+    @IBInspectable
+    open var highlightedColor: UIColor? {
+        didSet {
+            let image = highlightedColor.flatMap({ UIImage(color: $0) })
+            setImage(image, for: .highlighted)
+        }
+    }
+    
+    @IBInspectable
+    open var selectedColor: UIColor? {
+        didSet {
+            let image = selectedColor.flatMap({ UIImage(color: $0) })
+            setImage(image, for: .selected)
+        }
+    }
+    
+    @IBInspectable
+    open var highlightedSelectedColor: UIColor? {
+        didSet {
+            let image = highlightedSelectedColor.flatMap({ UIImage(color: $0) })
+            setImage(image, for: [.highlighted, .selected])
+        }
+    }
+    
+    
     
     //MARK: - Lifecycle
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         applyStyle()
-
+        
         #if !TARGET_INTERFACE_BUILDER
             addTitleColorChangeObserver()
         #endif
@@ -69,7 +111,7 @@ open class BorderedButton: UIButton {
         applyStyle()
         
         #if !TARGET_INTERFACE_BUILDER
-        addTitleColorChangeObserver()
+            addTitleColorChangeObserver()
         #endif
     }
     
@@ -79,7 +121,7 @@ open class BorderedButton: UIButton {
     
     deinit {
         #if !TARGET_INTERFACE_BUILDER
-        titleLabel?.removeObserver(self, forKeyPath: BorderedButton.TextColorKey)
+            titleLabel?.removeObserver(self, forKeyPath: BorderedButton.TextColorKey)
         #endif
     }
     
@@ -93,10 +135,10 @@ open class BorderedButton: UIButton {
     //MARK: - KVO
     
     open override func observeValue(forKeyPath keyPath: String?,
-                                                of object: Any?,
-                                                change: [NSKeyValueChangeKey : Any]?,
-                                                context: UnsafeMutableRawPointer?) {
-        // Accessing self.titleLabel triggers a recursion into this method, so we 
+                                    of object: Any?,
+                                    change: [NSKeyValueChangeKey : Any]?,
+                                    context: UnsafeMutableRawPointer?) {
+        // Accessing self.titleLabel triggers a recursion into this method, so we
         // can't explicitly check triggeringLabel==titleLabel
         guard let _ = object as? UILabel , BorderedButton.TextColorKey == keyPath else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
@@ -119,7 +161,7 @@ open class BorderedButton: UIButton {
     fileprivate func applyStyle() {
         layer.cornerRadius = cornerRadius
         layer.borderWidth = borderWidth
-
+        
         let color = borderColor ?? currentTitleColor
         layer.borderColor = color.cgColor
     }
